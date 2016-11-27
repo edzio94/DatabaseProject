@@ -8,7 +8,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
 		<module>carpartsshop-web</module>
-	</modules>
+		<module>user</module>
+        <module>carpartsshop-web-api</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>CarPartsShop</name>
