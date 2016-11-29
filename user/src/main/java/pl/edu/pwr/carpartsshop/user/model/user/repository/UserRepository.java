@@ -1,6 +1,6 @@
-package pl.edu.pwr.cartpartsshop.user.repository;
+package pl.edu.pwr.carpartsshop.user.model.user.repository;
 
-import pl.edu.pwr.cartpartsshop.user.model.dto.UserDto;
+import pl.edu.pwr.carpartsshop.user.model.user.dto.UserDto;
 
 /**
  * Created by lukasz on 11/23/16.

@@ -10,6 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
     <artifactId>carpartsshop-web</artifactId>
-
+    <dependencies>
+    <dependency>
+        <groupId>org.hsqldb</groupId>
+        <artifactId>hsqldb</artifactId>
+        <scope>test</scope>
+    </dependency>
+    </dependencies>
 
 </project>

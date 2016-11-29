@@ -11,10 +11,11 @@
 
     <artifactId>user</artifactId>
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId></groupId>-->
-            <!--<artifactId><junit></junit></artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>pl.edu.pwr</groupId>
+            <artifactId>carpartsshop-web</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>
