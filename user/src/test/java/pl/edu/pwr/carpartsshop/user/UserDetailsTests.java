@@ -25,6 +25,7 @@ import java.util.Date;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AppInit.class)
 @TestPropertySource("classpath:application-test.properties")
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class UserDetailsTests {
     @Autowired
     private UserDetailsService userDetailsService;
@@ -33,8 +34,8 @@ public class UserDetailsTests {
             .builder()
             .surname("Hullun")
             .name("Matt")
+            .userId(2)
             .address("Beer street, Liverpool")
-            .id(2)
             .isAdmin(false)
             .created(new Date())
             .build();
@@ -48,5 +49,13 @@ public class UserDetailsTests {
     public void shouldFindUserDetailsById() throws SQLException {
         UserDetailsDto userDetailsDto = userDetailsService.findUserDetailsById(userDetailsDto1.getId());
         Assert.assertNotNull("Find UserDetails by ID",userDetailsDto);
+    }
+    @Test
+    public void shouldFindUserDetailsByUserId() {
+
+    }
+    @Test
+    public void shouldDeleteUserDetailsById(){
+
     }
 }

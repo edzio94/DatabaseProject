@@ -21,16 +21,18 @@ public class UserDetailsDto {
     private String name;
     private String surname;
     private String address;
+    private int userId;
 
     public UserDetailsDto() {
     }
 
-    public UserDetailsDto(int id, Date created, boolean isAdmin, String name, String surname, String address) {
+    public UserDetailsDto(int id, Date created, boolean isAdmin, String name, String surname, String address, int userId) {
         this.id = id;
         this.created = created;
         this.isAdmin = isAdmin;
         this.name = name;
         this.surname = surname;
         this.address = address;
+        this.userId = userId;
     }
 }

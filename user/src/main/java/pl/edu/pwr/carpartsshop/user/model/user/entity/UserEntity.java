@@ -3,6 +3,7 @@ package pl.edu.pwr.carpartsshop.user.model.user.entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import pl.edu.pwr.carpartsshop.user.model.userdetails.dto.UserDetailsDto;
 import pl.edu.pwr.carpartsshop.user.model.userdetails.entity.UserDetailsEntity;
 
 /**
@@ -12,15 +13,14 @@ import pl.edu.pwr.carpartsshop.user.model.userdetails.entity.UserDetailsEntity;
 @Setter
 @ToString
 public class UserEntity {
-    private int id;
-    private int username;
-    private int password;
+    private String username;
+    private String password;
     private UserDetailsEntity userDetailsEntity;
 
     public UserEntity() {
     }
-    public UserEntity(int id, int username, int password, UserDetailsEntity userDetailsEntity) {
-        this.id = id;
+
+    public UserEntity(String username, String password, UserDetailsEntity userDetailsEntity) {
         this.username = username;
         this.password = password;
         this.userDetailsEntity = userDetailsEntity;

@@ -1,4 +1,4 @@
-package pl.edu.pwr.carpartsshop.user.mapper.user;
+package pl.edu.pwr.carpartsshop.user.mapper.userdetails;
 
 import org.springframework.jdbc.core.RowMapper;
 import pl.edu.pwr.carpartsshop.user.model.userdetails.entity.UserDetailsEntity;
@@ -16,6 +16,7 @@ public class UserDetailsRowMapper implements RowMapper<UserDetailsEntity> {
                 .address(rs.getString("address"))
                 .created(rs.getDate("created"))
                 .id(rs.getInt("id"))
+                .userId(rs.getInt("user_id"))
                 .name(rs.getString("name"))
                 .surname(rs.getString("surname"))
                 .isAdmin(rs.getBoolean("is_admin"))
