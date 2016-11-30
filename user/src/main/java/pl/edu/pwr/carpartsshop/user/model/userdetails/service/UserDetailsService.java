@@ -42,16 +42,7 @@ public class UserDetailsService implements UserDetailsRepository {
 
     @Override
     public UserDetailsDto findUserDetailsById(int id) throws SQLException {
-
-        List<UserDetailsEntity> query = jdbcTemplate.query(FIND_USER_DETAILS_BY_ID
-                , preparedStatement -> preparedStatement.setInt(1,id), new UserDetailsRowMapper());
-
-        if(query.size() == 0)
-            return null;
-            else {
-            UserDetailsDto userDetailsDto = new ModelMapper().map(query.get(0), UserDetailsDto.class);
-            return userDetailsDto;
-        }
+        return jdbcTemplate.queryForObject(FIND_USER_DETAILS_BY_ID, new Object[]{id}, UserDetailsDto.class);
     }
 
     @Override

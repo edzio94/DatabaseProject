@@ -48,14 +48,6 @@ public class UserService implements UserRepository{
         params.put("password",userDto.getPassword());
         Number number = simpleJdbcInsert.executeAndReturnKey(params);
         userDto.getUserDetailsDto().setUserId(number.intValue());
-//
-//        PreparedStatement statement = jdbcTemplate.getDataSource()
-//                .getConnection().prepareStatement(SAVE_USER_IN_DATABASE);
-//        statement.setString(1,userDto.getUsername());
-//        statement.setString(2,userDto.getPassword());
-//
-//        statement.execute();
-        System.out.println("AFTER ADDING USER");
         userDetailsService.saveUserDetails(userDto.getUserDetailsDto());
     }
 
