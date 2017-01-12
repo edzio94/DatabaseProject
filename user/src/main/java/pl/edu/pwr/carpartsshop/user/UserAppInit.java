@@ -1,0 +1,12 @@
+package pl.edu.pwr.carpartsshop.user;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * Created by lukasz on 12/14/16.
+ */
+@SpringBootApplication
+public class UserAppInit {
+
+}

@@ -7,15 +7,8 @@
         <groupId>pl.edu.pwr</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
     <artifactId>user</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>pl.edu.pwr</groupId>
-            <artifactId>carpartsshop-web</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
 </project>

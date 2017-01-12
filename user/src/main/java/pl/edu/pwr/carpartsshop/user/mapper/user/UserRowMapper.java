@@ -1,7 +1,7 @@
 package pl.edu.pwr.carpartsshop.user.mapper.user;
 
 import org.springframework.jdbc.core.RowMapper;
-import pl.edu.pwr.carpartsshop.user.model.user.entity.UserEntity;
+import pl.edu.pwr.carpartsshop.user.user.model.entity.UserEntity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -1,0 +1,32 @@
+CREATE TABLE IF NOT EXISTS `orderproduct` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  `productId` INT NOT NULL,
+  `orderId` INT NOT NULL
+)
+CREATE TABLE IF NOT EXISTS `order` (
+  `id` int not null AUTO_INCREMENT PRIMARY KEY,
+  `orderDate` DATE NOT NULL,
+)
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `company` varchar(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `amount` INT NOT NULL,
+  `price` DOUBLE not NULL,
+);
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `userdetails` (
+  `id` INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  `created` DATE,
+  `is_admin` INT DEFAULT 0,
+  `name` VARCHAR(45) NOT NULL,
+  `surname` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(45) NOT NULL,
+  `user_id` INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user(id)
+);
