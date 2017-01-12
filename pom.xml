@@ -7,11 +7,8 @@
 	<artifactId>carpartsshop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>user</module>
         <module>carpartsshop-web-api</module>
 		<module>web</module>
-        <module>product</module>
-        <module>order</module>
     </modules>
 	<packaging>pom</packaging>
 
