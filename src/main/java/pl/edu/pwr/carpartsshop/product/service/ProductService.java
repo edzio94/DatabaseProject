@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-import pl.edu.pwr.carpartsshop.product.model.ProductRowMapper;
 import pl.edu.pwr.carpartsshop.product.model.dto.ProductDto;
 import pl.edu.pwr.carpartsshop.product.model.entity.ProductEntity;
 import pl.edu.pwr.carpartsshop.product.repository.ProductRepository;
