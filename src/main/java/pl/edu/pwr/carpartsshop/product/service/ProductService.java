@@ -71,8 +71,12 @@ public class ProductService implements ProductRepository {
         statement.setInt(4,productDto.getAmount());
         statement.setInt(5,productDto.getId());
         statement.execute();
-
-
-
     }
+    public void deleteProduct(ProductDto productDto) throws SQLException {
+        PreparedStatement statement = jdbcTemplate.getDataSource()
+                .getConnection().prepareStatement(DELETE_PRODUCT);
+        statement.setInt(1, productDto.getId());
+        statement.execute();
+    }
+
 }

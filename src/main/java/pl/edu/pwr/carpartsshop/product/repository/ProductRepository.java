@@ -13,6 +13,7 @@ import java.util.List;
 public interface ProductRepository {
     String SAVE_PRODUCT = "INSERT INTO PRODUCT(company,name,price,amount) VALUES(?,?,?,?)";
     String GET_PRODUCT = "SELECT * FROM PRODUCT WHERE ID = ?";
+    String DELETE_PRODUCT = "DELETE FROM PRODUCT WHERE ID = ?";
     String GET_ALL_PRODUCTS = "SELECT * FROM PRODUCT";
     String UPDATE_PRODUCT = "UPDATE PRODUCT SET company = ?, name = ? , price = ?, amount = ? WHERE id = ?";
     ProductDto saveProduct(ProductDto productDto) throws SQLException;

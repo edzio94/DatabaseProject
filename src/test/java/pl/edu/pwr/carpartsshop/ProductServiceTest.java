@@ -57,4 +57,17 @@ public class ProductServiceTest {
 
         assertEquals(2,productService.getProducts().size());
     }
+    @Test
+    public void shouldDeleteProducts() throws  SQLException {
+        ProductDto productDto = productService.saveProduct(this.productDto);
+        ProductDto productDto1 = productService.saveProduct(ProductDto.builder()
+                .price(123.2)
+                .name("test")
+                .amount(123)
+                .company("qqq")
+                .build());
+
+        productService.deleteProduct(productDto1);
+        assertEquals(1,productService.getProducts().size());
+    }
 }

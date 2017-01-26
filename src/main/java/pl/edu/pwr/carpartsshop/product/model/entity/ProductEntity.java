@@ -1,9 +1,6 @@
 package pl.edu.pwr.carpartsshop.product.model.entity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * Created by lukasz on 1/8/17.
@@ -12,6 +9,8 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductEntity {
     private int id;
     private String company;

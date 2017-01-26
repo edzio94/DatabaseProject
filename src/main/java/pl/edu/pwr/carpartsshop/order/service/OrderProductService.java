@@ -1,10 +1,13 @@
 package pl.edu.pwr.carpartsshop.order.service;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import pl.edu.pwr.carpartsshop.order.Repository.OrderProductRepository;
 import pl.edu.pwr.carpartsshop.order.model.dto.OrderProductDto;
+import pl.edu.pwr.carpartsshop.order.model.entity.OrderProductEntity;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,6 +33,13 @@ public class OrderProductService implements OrderProductRepository {
         }
         return orderProductDto;
     }
+
+    @Override
+    public OrderProductDto getOrderProduct(OrderProductDto orderProductDto) throws SQLException {
+        OrderProductEntity orderProductEntity = jdbcTemplate.queryForObject(GET_ORDER_PRODUCT, new Object[]{orderProductDto.getId()}, new BeanPropertyRowMapper<>(OrderProductEntity.class));
+        return new ModelMapper().map(orderProductEntity,OrderProductDto.class);
+    }
+
 
     @Override
     public void deleteOrderProduct(int id) {

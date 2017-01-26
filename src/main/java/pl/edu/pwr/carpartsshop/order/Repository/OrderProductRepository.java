@@ -12,6 +12,8 @@ import java.sql.SQLException;
 public interface OrderProductRepository {
     String SAVE_ORDER_PRODUCT = "INSERT INTO ORDERPRODUCT(productId, orderId) VALUES (?,?)";
     String DELETE_PRODUCT = "DELETE FROM ORDERPRODUCT WHERE id = ?";
+    String GET_ORDER_PRODUCT = "SELECt * FROM ORDERPRODUCT WHERE id =?";
     OrderProductDto saveOrderProduct(OrderProductDto orderProductDto) throws SQLException;
+    OrderProductDto getOrderProduct(OrderProductDto orderProductDto) throws SQLException;
     void deleteOrderProduct(int id);
 }
