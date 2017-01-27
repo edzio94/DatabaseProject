@@ -1,9 +1,8 @@
 package pl.edu.pwr.carpartsshop.user.userdetails.model.entity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -12,25 +11,19 @@ import java.util.Date;
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Table(name = "userdetails")
+@Entity
 public class UserDetailsEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private Date created;
     private boolean isAdmin;
     private String name;
     private String surname;
     private String address;
-    private int userId;
 
-    public UserDetailsEntity() {
-    }
-
-    public UserDetailsEntity(int id, Date created, boolean isAdmin, String name, String surname, String address,int userId) {
-        this.id = id;
-        this.created = created;
-        this.isAdmin = isAdmin;
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.userId = userId;
-    }
 }

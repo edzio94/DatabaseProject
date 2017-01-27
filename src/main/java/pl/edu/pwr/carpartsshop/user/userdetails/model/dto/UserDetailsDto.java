@@ -1,9 +1,6 @@
 package pl.edu.pwr.carpartsshop.user.userdetails.model.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
@@ -14,6 +11,8 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDetailsDto {
     private int id;
     private Date created;
@@ -21,18 +20,5 @@ public class UserDetailsDto {
     private String name;
     private String surname;
     private String address;
-    private int userId;
 
-    public UserDetailsDto() {
-    }
-
-    public UserDetailsDto(int id, Date created, boolean isAdmin, String name, String surname, String address, int userId) {
-        this.id = id;
-        this.created = created;
-        this.isAdmin = isAdmin;
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.userId = userId;
-    }
 }

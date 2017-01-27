@@ -1,10 +1,11 @@
 package pl.edu.pwr.carpartsshop.user.user.model.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
+import lombok.*;
+import pl.edu.pwr.carpartsshop.product.model.dto.ProductDto;
 import pl.edu.pwr.carpartsshop.user.userdetails.model.dto.UserDetailsDto;
+
+import java.util.List;
 
 /**
  * Created by lukasz on 11/23/16.
@@ -13,19 +14,12 @@ import pl.edu.pwr.carpartsshop.user.userdetails.model.dto.UserDetailsDto;
 @Setter
 @Builder
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
     private String username;
     private String password;
     private UserDetailsDto userDetailsDto;
-
-
-    public UserDto() {
-    }
-
-    public UserDto(String username, String password, UserDetailsDto userDetailsDto) {
-        this.username = username;
-        this.password = password;
-        this.userDetailsDto = userDetailsDto;
-    }
+    private List<ProductDto> productDtos;
 }
 
