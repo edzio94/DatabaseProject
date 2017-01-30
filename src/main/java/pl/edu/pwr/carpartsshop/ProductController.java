@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.edu.pwr.carpartsshop.product.model.dto.ProductDto;
 import pl.edu.pwr.carpartsshop.product.service.ProductService;
 
+import java.util.List;
+
 /**
  * Created by lukasz on 1/27/17.
  */
@@ -23,7 +25,7 @@ public class ProductController {
         return "Executed adding product to database";
     }
     @RequestMapping("/showProducts")
-    public javaslang.collection.List<ProductDto> showProducts(){
+    public List<ProductDto> showProducts(){
         return productService.getProducts();
     }
 }

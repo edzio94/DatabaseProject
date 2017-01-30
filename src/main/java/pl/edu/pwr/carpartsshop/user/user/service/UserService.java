@@ -84,5 +84,16 @@ public class UserService {
         userDto.setProductDtos(mapper.map(one.getProductsOrdered(),List.class));
         return userDto;
     }
+    @Transactional
+    public boolean modifyUser(UserDto userDto){
+        UserEntity one = userRepository.findOne(userDto.getUsername());
+        if (one != null) {
+            one = mapper.map(userDto,UserEntity.class);
+            one.setUserDetailsEntity(mapper.map(userDto.getUserDetailsDto(),UserDetailsEntity.class));
+            userRepository.save(one);
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -1,6 +1,6 @@
 package pl.edu.pwr.carpartsshop.product.service;
 
-import javaslang.collection.List;
+
 import javaslang.collection.Stream;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -50,7 +51,7 @@ public class ProductService {
     public List<ProductDto> getProducts() {
         return Stream.ofAll(productRepository.findAll())
                 .map(i -> mapper.map(i,ProductDto.class))
-                .toList();
+                .toJavaList();
     }
 
 

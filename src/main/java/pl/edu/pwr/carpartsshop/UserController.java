@@ -30,5 +30,11 @@ private UserService userService;
         userService.addProductToUser(userDto,id);
         return "Executed add product to database";
     }
+    @PostMapping("/modifyUser")
+    public String modifyUser(@RequestBody UserDto userDto){
+        userService.modifyUser(userDto);
+            return "Modifying user";
+
+    }
 
 }
